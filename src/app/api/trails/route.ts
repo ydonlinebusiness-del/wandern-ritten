@@ -9,6 +9,7 @@ export async function GET() {
       trails: trails.map((t) => ({
         osmId: t.osmId,
         name: t.name,
+        ref: t.ref,
         geometry: t.geometry,
       })),
     });

@@ -116,7 +116,19 @@ export default function MapView({ activities, pois, planned }: Props) {
                     dashArray: done ? undefined : "4 6",
                   }}
                 >
-                  {t.name && <Popup>{t.name}</Popup>}
+                  {(t.ref || t.name) && (
+                    <Popup>
+                      <div className="space-y-0.5">
+                        {t.ref && (
+                          <div className="font-semibold">Weg {t.ref}</div>
+                        )}
+                        {t.name && <div className="text-sm">{t.name}</div>}
+                        <div className="text-xs text-slate-500">
+                          {done ? "✓ schon gelaufen" : "noch offen"}
+                        </div>
+                      </div>
+                    </Popup>
+                  )}
                 </Polyline>
               );
             })}

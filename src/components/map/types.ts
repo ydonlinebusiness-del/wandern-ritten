@@ -12,6 +12,7 @@ export interface MapActivity {
 export interface MapTrail {
   osmId: string;
   name: string | null;
+  ref: string | null;
   geometry: LineString; // [lng, lat]
 }
 
