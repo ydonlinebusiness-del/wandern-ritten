@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "leaflet/dist/leaflet.css";
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  @apply bg-ritten-snow text-slate-800 antialiased;
+}
+
+/* Leaflet-Container soll seinen Eltern füllen */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  background: #e8eef2;
+  font: inherit;
+}
+
+.leaflet-popup-content {
+  @apply text-sm;
+}
+
+/* Karten-Höhe für die Hauptansicht */
+.map-shell {
+  height: calc(100dvh - 3.5rem);
+}
